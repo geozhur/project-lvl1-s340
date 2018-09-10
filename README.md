@@ -15,3 +15,6 @@ npm install brain-games-geozhur -g
 ## List games
 
 1. brain-games
+2. brain-even
+
+[![asciicast](https://asciinema.org/a/cEERqy3LWGoqktEYcPLJ6cwlX.png)](https://asciinema.org/a/cEERqy3LWGoqktEYcPLJ6cwlX)
