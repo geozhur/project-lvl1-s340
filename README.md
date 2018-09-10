@@ -6,7 +6,7 @@ Brain-games
 ### Installing
 
 ```
-npm install brain-games370 -g
+npm install brain-games-geozhur -g
 ```
 
 ## List games
