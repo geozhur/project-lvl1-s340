@@ -1,6 +1,6 @@
 {
   "name": "brain-games-geozhur",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "license": "ISC",
   "description": "brain-games",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "eslint": "npm run eslint"
+    "eslint": "npx eslint ."
   },
   "author": {
     "name": "Zhuravlev Georgy",
