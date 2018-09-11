@@ -1,21 +1,21 @@
 
-import { game, makeQuestionAndRightAnswer } from "..";
+import { game, makeQuestionAndCorrectAnswer } from "..";
 
 
 const getGcd = (num1, num2) => (num2 !== 0 ? getGcd(num2, num1 % num2) : num1);
 
-const gcd = () => {
+const gcdGame = () => {
   const num1 = Math.floor((Math.random() * 100) + 1);
   const num2 = Math.floor((Math.random() * 100) + 1);
-  const rightAnswer = getGcd(num1, num2);
+  const correctAnswer = getGcd(num1, num2);
   const question = `${num1} ${num2}`;
-  return makeQuestionAndRightAnswer(question, String(rightAnswer));
+  return makeQuestionAndCorrectAnswer(question, String(correctAnswer));
 };
 
 const condition = "Find the greatest common divisor of given numbers.";
 
 const run = () => {
-  game(gcd, condition);
+  game(gcdGame, condition);
 };
 
 export default run;

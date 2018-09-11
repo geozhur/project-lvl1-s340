@@ -1,8 +1,8 @@
 
-import { game, makeQuestionAndRightAnswer } from "..";
+import { game, makeQuestionAndCorrectAnswer } from "..";
 import { cons, cdr, car } from "hexlet-pairs";
 
-const getActAndRightAnswer = (num1, num2) => {
+const getActAndCorrectAnswer = (num1, num2) => {
   switch (Math.floor((Math.random() * 3) + 1)) {
     case 1:
       return cons("+", num1 + num2);
@@ -16,19 +16,19 @@ const getActAndRightAnswer = (num1, num2) => {
 };
 
 
-const calc = () => {
+const calcGame = () => {
   const num1 = Math.floor((Math.random() * 100) + 1);
   const num2 = Math.floor((Math.random() * 100) + 1);
-  const ActAndRightAnswer = getActAndRightAnswer(num1, num2);
-  const question = `${num1} ${car(ActAndRightAnswer)} ${num2}`;
-  const rightAnswer = cdr(ActAndRightAnswer);
-  return makeQuestionAndRightAnswer(question, String(rightAnswer));
+  const ActAndCorrectAnswer = getActAndCorrectAnswer(num1, num2);
+  const question = `${num1} ${car(ActAndCorrectAnswer)} ${num2}`;
+  const correctAnswer = cdr(ActAndCorrectAnswer);
+  return makeQuestionAndCorrectAnswer(question, String(correctAnswer));
 };
 
 const condition = "What is the result of the expression?";
 
 const run = () => {
-  game(calc, condition);
+  game(calcGame, condition);
 };
 
 export default run;

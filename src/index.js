@@ -10,11 +10,11 @@ const run = () => {
   console.log(`Hello, ${name}`);
 };
 
-const makeQuestionAndRightAnswer = (question, rightAnswer) => cons(question, rightAnswer);
-const getQuestion = questionAndRightAnswer => car(questionAndRightAnswer);
-const getRightAnswer = questionAndRightAnswer => cdr(questionAndRightAnswer);
+const makeQuestionAndCorrectAnswer = (question, correctAnswer) => cons(question, correctAnswer);
+const getQuestion = questionAndCorrectAnswer => car(questionAndCorrectAnswer);
+const getCorrectAnswer = questionAndCorrectAnswer => cdr(questionAndCorrectAnswer);
 
-const game = (getQuestionAndRightAnswer, condition) => {
+const game = (getQuestionAndCorrectAnswer, condition) => {
   console.log("Welcome to the Brain Games!");
   console.log(condition);
   console.log();
@@ -26,26 +26,26 @@ const game = (getQuestionAndRightAnswer, condition) => {
     if (iter === 0) {
       return true;
     }
-    const QuestionAndRightAnswer = getQuestionAndRightAnswer();
-    const rightAnswer = getRightAnswer(QuestionAndRightAnswer);
-    const question = getQuestion(QuestionAndRightAnswer);
+    const QuestionAndCorrectAnswer = getQuestionAndCorrectAnswer();
+    const correctAnswer = getCorrectAnswer(QuestionAndCorrectAnswer);
+    const question = getQuestion(QuestionAndCorrectAnswer);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question("Your answer: ");
 
-    if (answer === rightAnswer) {
+    if (answer === correctAnswer) {
       console.log("Correct!");
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       return false;
     }
     return iterGame(iter - 1);
   };
 
-  if (!iterGame(numQuestion, getQuestionAndRightAnswer)) {
+  if (!iterGame(numQuestion, getQuestionAndCorrectAnswer)) {
     console.log(`Let's try again, ${name}`);
   } else {
     console.log(`Congratulations, ${name}!`);
   }
 };
 
-export { run, game, makeQuestionAndRightAnswer };
+export { run, game, makeQuestionAndCorrectAnswer };
