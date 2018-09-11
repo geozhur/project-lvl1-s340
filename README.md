@@ -31,3 +31,7 @@ npm install brain-games-geozhur -g
 
 [![asciicast](https://asciinema.org/a/ktgqru8yDqexPySElc6z8j3xY.png)](https://asciinema.org/a/ktgqru8yDqexPySElc6z8j3xY)
 
+3. brain-progression
+
+[![asciicast](https://asciinema.org/a/q1lewknBLbx8hIE7attwPC2xG.png)](https://asciinema.org/a/q1lewknBLbx8hIE7attwPC2xG)
+
