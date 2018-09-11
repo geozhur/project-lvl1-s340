@@ -1,6 +1,6 @@
 {
   "name": "brain-games-geozhur",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "license": "ISC",
   "description": "brain-games",
   "main": "dist/index.js",
@@ -20,7 +20,8 @@
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "repository": {
     "type": "git",
