@@ -9,7 +9,7 @@ const evenGame = () => {
   return makeQuestionAndCorrectAnswer(question, correctAnswer);
 };
 
-const condition = "Answer \"yes\" if number even otherwise answer \"no\".\n";
+const condition = "Answer \"yes\" if number even otherwise answer \"no\".";
 
 const run = () => {
   game(evenGame, condition);

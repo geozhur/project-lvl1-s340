@@ -17,10 +17,10 @@ const sortDigitalInNum = (num) => {
     }
     return iterNum(iter + 1, num[min] > num[iter] ? iter : min);
   };
+
   const indexMin = iterNum(0, 0);
   return num[indexMin] + sortDigitalInNum(removeIndex(indexMin, num));
 };
-
 
 // const sortDigitalInNum = num => ((num.split("")).sort()).join("");
 
