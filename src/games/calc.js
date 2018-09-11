@@ -2,7 +2,7 @@
 import { game, makeQuestionAndRightAnswer } from "..";
 import { cons, cdr, car } from "hexlet-pairs";
 
-const getActAndrightAnswer = (num1, num2) => {
+const getActAndRightAnswer = (num1, num2) => {
   switch (Math.floor((Math.random() * 3) + 1)) {
     case 1:
       return cons("+", num1 + num2);
@@ -19,9 +19,9 @@ const getActAndrightAnswer = (num1, num2) => {
 const calc = () => {
   const num1 = Math.floor((Math.random() * 100) + 1);
   const num2 = Math.floor((Math.random() * 100) + 1);
-  const ActAndrightAnswer = getActAndrightAnswer(num1, num2);
-  const question = `${num1} ${car(ActAndrightAnswer)} ${num2}`;
-  const rightAnswer = cdr(ActAndrightAnswer);
+  const ActAndRightAnswer = getActAndRightAnswer(num1, num2);
+  const question = `${num1} ${car(ActAndRightAnswer)} ${num2}`;
+  const rightAnswer = cdr(ActAndRightAnswer);
   return makeQuestionAndRightAnswer(question, String(rightAnswer));
 };
 
