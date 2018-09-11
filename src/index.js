@@ -1,5 +1,6 @@
 
 import readlineSync from "readline-sync";
+import { cons, car, cdr } from "hexlet-pairs";
 
 const numQuestion = 3;
 
@@ -9,30 +10,42 @@ const run = () => {
   console.log(`Hello, ${name}`);
 };
 
-const game = (getQuestionAndRightAnswer, getCondition) => {
-  let answer = "";
-  let question = "";
-  let rightAnswer = "";
-  console.log("Welcome to the Brain Games!");
-  console.log(getCondition);
-  const name = readlineSync.question("May I have your name?: ");
-  console.log(`Hello, ${name}\n`);
-  for (let i = 0; i < numQuestion; i += 1) {
-    [question, rightAnswer] = getQuestionAndRightAnswer();
+const makeQuestionAndRightAnswer = (question, rightAnswer) => cons(question, rightAnswer);
+const getQuestion = questionAndRightAnswer => car(questionAndRightAnswer);
+const getRightAnswer = questionAndRightAnswer => cdr(questionAndRightAnswer);
 
+const game = (getQuestionAndRightAnswer, condition) => {
+  console.log("Welcome to the Brain Games!");
+  console.log(condition);
+  console.log();
+  const name = readlineSync.question("May I have your name?: ");
+  console.log(`Hello, ${name}`);
+  console.log();
+
+  const iterGame = (iter) => {
+    if (iter === 0) {
+      return true;
+    }
+    const QuestionAndRightAnswer = getQuestionAndRightAnswer();
+    const rightAnswer = getRightAnswer(QuestionAndRightAnswer);
+    const question = getQuestion(QuestionAndRightAnswer);
     console.log(`Question: ${question}`);
-    answer = readlineSync.question("Your answer: ");
+    const answer = readlineSync.question("Your answer: ");
 
     if (answer === rightAnswer) {
       console.log("Correct!");
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-      console.log(`Let's try again, ${name}`);
-      return;
+      return false;
     }
-  }
+    return iterGame(iter - 1);
+  };
 
-  console.log(`Congratulations, ${name}!`);
+  if (!iterGame(numQuestion, getQuestionAndRightAnswer)) {
+    console.log(`Let's try again, ${name}`);
+  } else {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 
-export { run, game };
+export { run, game, makeQuestionAndRightAnswer };

@@ -1,6 +1,6 @@
 {
   "name": "brain-games-geozhur",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "license": "ISC",
   "description": "brain-games",
   "main": "dist/index.js",
@@ -44,6 +44,7 @@
     "eslint-plugin-import": "^2.14.0"
   },
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   }
 }

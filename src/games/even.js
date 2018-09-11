@@ -1,19 +1,18 @@
 
-import { game } from "..";
+import { game, makeQuestionAndRightAnswer } from "..";
 
 const isEven = num => (num % 2 === 0);
 
 const even = () => {
-  const rand = Math.floor((Math.random() * 100) + 1);
-  const question = rand;
-  const rightAnswer = isEven(rand) ? "yes" : "no";
-  return [question, rightAnswer];
+  const question = Math.floor((Math.random() * 100) + 1);
+  const rightAnswer = isEven(question) ? "yes" : "no";
+  return makeQuestionAndRightAnswer(question, rightAnswer);
 };
 
-const getCondition = "Answer \"yes\" if number even otherwise answer \"no\".\n";
+const condition = "Answer \"yes\" if number even otherwise answer \"no\".\n";
 
 const run = () => {
-  game(even, getCondition);
+  game(even, condition);
 };
 
 export default run;
