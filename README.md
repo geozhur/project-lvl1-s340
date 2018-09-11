@@ -26,3 +26,8 @@ npm install brain-games-geozhur -g
 2. brain-gcd
 
 [![asciicast](https://asciinema.org/a/C1KCE2uad22I5xhpTcn9dP4yi.png)](https://asciinema.org/a/C1KCE2uad22I5xhpTcn9dP4yi)
+
+3. brain-balance
+
+[![asciicast](https://asciinema.org/a/ktgqru8yDqexPySElc6z8j3xY.png)](https://asciinema.org/a/ktgqru8yDqexPySElc6z8j3xY)
+
