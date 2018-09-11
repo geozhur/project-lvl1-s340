@@ -18,3 +18,7 @@ npm install brain-games-geozhur -g
 2. brain-even
 
 [![asciicast](https://asciinema.org/a/cEERqy3LWGoqktEYcPLJ6cwlX.png)](https://asciinema.org/a/cEERqy3LWGoqktEYcPLJ6cwlX)
+
+2. brain-calc
+
+[![asciicast](https://asciinema.org/a/JwIxp5Sz2nAaHqeROMBKTYW9X.png)](https://asciinema.org/a/JwIxp5Sz2nAaHqeROMBKTYW9X)
