@@ -1,5 +1,5 @@
-import { game, makeQuestionAndCorrectAnswer } from "..";
-import { cons, cdr, car } from "hexlet-pairs";
+import { game, makeQuestionAndCorrectAnswer } from '..';
+import { cons, cdr, car } from 'hexlet-pairs';
 
 const removeIndex = (index, str) => {
   const end = str.substr(index + 1, str.length - index - 1);
@@ -9,7 +9,7 @@ const removeIndex = (index, str) => {
 
 const sortDigitalInNum = (num) => {
   if (num.length === 0) {
-    return "";
+    return '';
   }
   const iterNum = (iter, min) => {
     if (iter === String(num).length) {
@@ -53,17 +53,17 @@ const setBalance = (num) => {
 };
 
 
-const balanceGame = () => {
+const launchGameTheBalance = () => {
   const num = Math.floor((Math.random() * 1000) + 1);
   const correctAnswer = sortDigitalInNum(setBalance(num));
   const question = `${num}`;
   return makeQuestionAndCorrectAnswer(question, String(correctAnswer));
 };
 
-const condition = "Balance the given number.";
+const condition = 'Balance the given number.';
 
 const run = () => {
-  game(balanceGame, condition);
+  game(launchGameTheBalance, condition);
 };
 
 export default run;
