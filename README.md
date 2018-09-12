@@ -19,19 +19,22 @@ npm install brain-games-geozhur -g
 
 [![asciicast](https://asciinema.org/a/cEERqy3LWGoqktEYcPLJ6cwlX.png)](https://asciinema.org/a/cEERqy3LWGoqktEYcPLJ6cwlX)
 
-2. brain-calc
+3. brain-calc
 
 [![asciicast](https://asciinema.org/a/JwIxp5Sz2nAaHqeROMBKTYW9X.png)](https://asciinema.org/a/JwIxp5Sz2nAaHqeROMBKTYW9X)
 
-2. brain-gcd
+4. brain-gcd
 
 [![asciicast](https://asciinema.org/a/C1KCE2uad22I5xhpTcn9dP4yi.png)](https://asciinema.org/a/C1KCE2uad22I5xhpTcn9dP4yi)
 
-3. brain-balance
+5. brain-balance
 
 [![asciicast](https://asciinema.org/a/ktgqru8yDqexPySElc6z8j3xY.png)](https://asciinema.org/a/ktgqru8yDqexPySElc6z8j3xY)
 
-3. brain-progression
+6. brain-progression
 
 [![asciicast](https://asciinema.org/a/q1lewknBLbx8hIE7attwPC2xG.png)](https://asciinema.org/a/q1lewknBLbx8hIE7attwPC2xG)
 
+7. brain-prime
+
+[![asciicast](https://asciinema.org/a/CIBEFOxqTdbTMelPKlIL1hxIx.png)](https://asciinema.org/a/CIBEFOxqTdbTMelPKlIL1hxIx)
