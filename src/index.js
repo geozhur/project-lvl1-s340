@@ -16,11 +16,9 @@ const getCorrectAnswer = questionAndCorrectAnswer => cdr(questionAndCorrectAnswe
 
 const game = (getQuestionAndCorrectAnswer, condition) => {
   console.log("Welcome to the Brain Games!");
-  console.log(condition);
-  console.log();
+  console.log(`${condition}\n`);
   const name = readlineSync.question("May I have your name?: ");
-  console.log(`Hello, ${name}`);
-  console.log();
+  console.log(`Hello, ${name}\n`);
 
   const iterGame = (iter) => {
     if (iter === 0) {
