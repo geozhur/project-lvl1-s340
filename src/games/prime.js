@@ -1,4 +1,4 @@
-import { game, makeQuestionAndCorrectAnswer } from '..';
+import { game, makeQuestionAndCorrectAnswer, rand } from '..';
 
 const isPrime = (num) => {
   const iterPrime = (index) => {
@@ -14,7 +14,7 @@ const isPrime = (num) => {
 };
 
 const launchGameThePrime = () => {
-  const question = Math.floor((Math.random() * 1000) + 1);
+  const question = rand(1, 1000);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return makeQuestionAndCorrectAnswer(question, correctAnswer);
 };

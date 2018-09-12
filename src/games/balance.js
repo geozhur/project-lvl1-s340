@@ -1,4 +1,4 @@
-import { game, makeQuestionAndCorrectAnswer } from '..';
+import { game, makeQuestionAndCorrectAnswer, rand } from '..';
 import { cons, cdr, car } from 'hexlet-pairs';
 
 const removeIndex = (index, str) => {
@@ -17,7 +17,6 @@ const sortDigitalInNum = (num) => {
     }
     return iterNum(iter + 1, num[min] > num[iter] ? iter : min);
   };
-
   const indexMin = iterNum(0, 0);
   return num[indexMin] + sortDigitalInNum(removeIndex(indexMin, num));
 };
@@ -34,7 +33,7 @@ const getMaxAndMinDigital = (num) => {
   return iterNum(0, 0, 9);
 };
 
-const setBalance = (num) => {
+const makeBalance = (num) => {
   const iterBalance = (iter) => {
     const MaxAndMinDigital = getMaxAndMinDigital(iter);
     const max = Number(car(MaxAndMinDigital));
@@ -42,10 +41,8 @@ const setBalance = (num) => {
     if (max - min < 2) {
       return iter;
     }
-
     const iterMaxReplace = iter.replace(String(max), String(max - 1));
     const iterMinReplace = iterMaxReplace.replace(String(min), String(min + 1));
-
     return iterBalance(iterMinReplace);
   };
 
@@ -54,8 +51,8 @@ const setBalance = (num) => {
 
 
 const launchGameTheBalance = () => {
-  const num = Math.floor((Math.random() * 1000) + 1);
-  const correctAnswer = sortDigitalInNum(setBalance(num));
+  const num = rand(1, 1000);
+  const correctAnswer = sortDigitalInNum(makeBalance(num));
   const question = `${num}`;
   return makeQuestionAndCorrectAnswer(question, String(correctAnswer));
 };

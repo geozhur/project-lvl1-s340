@@ -1,4 +1,4 @@
-import { game, makeQuestionAndCorrectAnswer } from '..';
+import { game, makeQuestionAndCorrectAnswer, rand } from '..';
 import { cons, cdr, car } from 'hexlet-pairs';
 
 const getActAndCorrectAnswer = (num1, num2) => {
@@ -16,8 +16,8 @@ const getActAndCorrectAnswer = (num1, num2) => {
 
 
 const launchGameTheCalc = () => {
-  const num1 = Math.floor((Math.random() * 100) + 1);
-  const num2 = Math.floor((Math.random() * 100) + 1);
+  const num1 = rand(1, 100);
+  const num2 = rand(1, 100);
   const ActAndCorrectAnswer = getActAndCorrectAnswer(num1, num2);
   const question = `${num1} ${car(ActAndCorrectAnswer)} ${num2}`;
   const correctAnswer = cdr(ActAndCorrectAnswer);

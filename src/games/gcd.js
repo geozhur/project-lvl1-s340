@@ -1,11 +1,11 @@
-import { game, makeQuestionAndCorrectAnswer } from '..';
+import { game, makeQuestionAndCorrectAnswer, rand } from '..';
 
 
 const getGcd = (num1, num2) => (num2 !== 0 ? getGcd(num2, num1 % num2) : num1);
 
 const launchGameTheGcd = () => {
-  const num1 = Math.floor((Math.random() * 100) + 1);
-  const num2 = Math.floor((Math.random() * 100) + 1);
+  const num1 = rand(1, 100);
+  const num2 = rand(1, 100);
   const correctAnswer = getGcd(num1, num2);
   const question = `${num1} ${num2}`;
   return makeQuestionAndCorrectAnswer(question, String(correctAnswer));
