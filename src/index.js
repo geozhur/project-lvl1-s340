@@ -1,8 +1,9 @@
-
 import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
 const numQuestion = 3;
+
+const rand = (begin, end) => Math.floor((Math.random() * end) + begin);
 
 const run = () => {
   console.log('Welcome to the Brain Games!\n');
@@ -46,4 +47,6 @@ const game = (getQuestionAndCorrectAnswer, condition) => {
   }
 };
 
-export { run, game, makeQuestionAndCorrectAnswer };
+export {
+  run, game, makeQuestionAndCorrectAnswer, rand,
+};

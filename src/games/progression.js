@@ -1,4 +1,4 @@
-import { game, makeQuestionAndCorrectAnswer } from '..';
+import { game, makeQuestionAndCorrectAnswer, rand } from '..';
 import { cons, cdr, car } from 'hexlet-pairs';
 
 const lengthProgression = 10;
@@ -6,25 +6,27 @@ const minFirstElemProgression = 10;
 const maxFirstElemProgression = 100;
 const maxStepProgression = 10;
 
-const launchGameTheProgression = () => {
-  const numFirst = Math.floor((Math.random() * maxFirstElemProgression) + 1
-         + minFirstElemProgression);
-  const stepProgression = Math.floor((Math.random() * maxStepProgression) + 1);
-  const keyAnswer = Math.floor((Math.random() * lengthProgression));
+const makeProgression = (numFirst, stepProgression, keyAnswer) => {
   const numMax = numFirst + lengthProgression * stepProgression;
-
-  const Item = (iter, progression) => {
+  const makeElemsProgression = (iter, progressionAndCorrectAnswer) => {
     if (iter === numMax) {
-      return progression;
+      return progressionAndCorrectAnswer;
     }
 
     const itemAnswer = keyAnswer * stepProgression + numFirst;
-    const progressionOut = (iter === itemAnswer) ? `${car(progression)}.. ` : `${car(progression)}${iter} `;
-    const correctAnswer = (iter === itemAnswer) ? String(iter) : cdr(progression);
-    return Item(iter + stepProgression, cons(progressionOut, correctAnswer));
+    const progression = (iter === itemAnswer) ? `${car(progressionAndCorrectAnswer)}.. ` : `${car(progressionAndCorrectAnswer)}${iter} `;
+    const correctAnswer = (iter === itemAnswer) ? String(iter) : cdr(progressionAndCorrectAnswer);
+    return makeElemsProgression(iter + stepProgression, cons(progression, correctAnswer));
   };
+  return makeElemsProgression(numFirst, cons('', 0));
+};
 
-  const progressionAndCorrectAnswer = Item(numFirst, cons('', 0));
+const launchGameTheProgression = () => {
+  const numFirst = rand(minFirstElemProgression, maxFirstElemProgression);
+  const stepProgression = rand(1, maxStepProgression);
+  const keyAnswer = rand(0, lengthProgression);
+
+  const progressionAndCorrectAnswer = makeProgression(numFirst, stepProgression, keyAnswer);
   const question = car(progressionAndCorrectAnswer);
   const correctAnswer = cdr(progressionAndCorrectAnswer);
   return makeQuestionAndCorrectAnswer(question, correctAnswer);
